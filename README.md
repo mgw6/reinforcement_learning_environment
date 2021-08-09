@@ -25,20 +25,27 @@ Assignment 2 Report
 	The game also terminates when it has reached the max number of timesteps, however without the +3 reward. 
 
 	For the stochastic environment, the board is set up in the same 4 by 4 grid with 4 move choices, and 8 timesteps. 
-	The major difference between the deterministic and stochastic environment is that with the stochastic when a move is selected there is a varying probability that that move will actually occur. 
+	The major difference between the deterministic and stochastic environment is that with the stochastic when a move is 
+	selected there is a varying probability that that move will actually occur. 
 	The most likely scenario is that the selected move occurs, but there are varying probabilities that others will occur. 
-	For instance, if the agent chooses left, there is an 87.5% chance that it will go left, but there is also a 6.5% chance that it actually goes down and to the left, as well as a 6% chance it will actually get thrown to position (2,0).  
+	For instance, if the agent chooses left, there is an 87.5% chance that it will go left, but there is also a 6.5% 
+	chance that it actually goes down and to the left, as well as a 6% chance it will actually get thrown to position (2,0).  
 	The other difference is the variation on rewards. The rewards are located in positions (2,1) and (3,0). 
-	When the agent lands on either of those squares there is a .33 chance that it will lose a point, a .47% chance that it gains a point and a .3% chance that it gains 2 points. 
+	When the agent lands on either of those squares there is a .33 chance that it will lose a point, a .47% chance that 
+	it gains a point and a .3% chance that it gains 2 points. 
 
-	My tabular method was designed as a function because I wanted to be able to write one function to test on both environments, similar to how in assignment one we wrote two search functions to test on one environment. 
-	I later found that this was handy because I could make the number of runs an input of the function so that I could change how many runs were used in each environment. 
+	My tabular method was designed as a function because I wanted to be able to write one function to test on both environments, 
+	similar to how in assignment one we wrote two search functions to test on one environment. 
+	I later found that this was handy because I could make the number of runs an input of the function so that I could change 
+	how many runs were used in each environment. 
 	The stochastic environment needs more runs to show a positive correlation than the deterministic did. 
 	I set up my learning function based on the Q - Learning algorithm. 
-	The first thing the function does is set initialize a reward history list, declares epsilon as 1, makes a blank Transition Probability Table, and sets our Alpha = .65 and  Gamma = .895. 
+	The first thing the function does is set initialize a reward history list, declares epsilon as 1, makes 
+	a blank Transition Probability Table, and sets our Alpha = .65 and  Gamma = .895. 
 	These numbers were chosen because they were the exact middle of the range Professor Alina suggested. 
 	There is then a for loop that goes for the number of runs input into the function. 
-	For every pass, it resets the environment, sets done = to false, and then resets 5 variables which are used in the next while loop: current score, new score, score difference, current state, and new state. 
+	For every pass, it resets the environment, sets done = to false, and then resets 5 variables 
+	which are used in the next while loop: current score, new score, score difference, current state, and new state. 
 	I purposefully have this “reset” be something crazy because they all should be changed later. 
 	If they are not reset then they will show up later and I will know to start looking there for errors. 
 	
@@ -52,8 +59,11 @@ Assignment 2 Report
 	
 	Then we update our probability table. 
 	I used the Q-Learning equation on slide 24 of lecture 7.1-7.2. 
-	When written out in code, what it says is that the state we were just in now equals that same thing, plus all of the newly found scores plus gamma times the highest option in the new state, minus the old value of the probability table at the old state, times alpha. 
+	When written out in code, what it says is that the state we were just in now equals that same thing, plus 
+	all of the newly found scores plus gamma times the highest option in the new state, minus the old value of 
+	the probability table at the old state, times alpha. 
 	
 	Once it has solved the problem, it adds the final reward to the reward history list and decreases epsilon by a small amount. 
-	After it has gone through the problem the inputted amount of times, it prints out the reward history as a list as well as a graph of the history over time. 
+	After it has gone through the problem the inputted amount of times, it prints 
+	out the reward history as a list as well as a graph of the history over time. 
 	It also prints out the updated transition probability table. 
