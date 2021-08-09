@@ -224,7 +224,10 @@ class Learn: #I want to make learning a function so I can call it for either env
 
         print("Reward history:")
         print(reward_hist) #Self explanatory
-
+        
+        print("\Transition probability table:")
+        print(prob_table)
+        
         window = 10 #sets up graph
         plt.xlabel("Episode") 
         plt.ylabel("Rewards")
@@ -232,12 +235,9 @@ class Learn: #I want to make learning a function so I can call it for either env
         plt.plot([np.mean(reward_hist[tr: tr+window]) for tr in range(window, len(reward_hist))]) #prints data on Graph
         plt.show()
 
-        print("\Transition probability table:")
-        print(prob_table)
-
 
 if __name__ == "__main__":
     env = Deterministic_Environment() #initialize the determistic environment
     agent = Random_Agent(env) #initialize agent
 
-    Learn.Learning(env,1000) #okay and then lets learn
+    Learn.Learning(env, 10000) #okay and then lets learn
