@@ -222,15 +222,17 @@ class Learn: #I want to make learning a function so I can call it for either env
             #so on run one epsilon is 1, on the last run it is 1 - (1/runs). If run is 1000 then epsilon is .001
         
 
-        print("Here is the reward history:")
+        print("Reward history:")
         print(reward_hist) #Self explanatory
 
         window = 10 #sets up graph
-        plt.xlabel("Episode") #tbh this is a straight copy and paste from Utkarsh's workbook
+        plt.xlabel("Episode") 
         plt.ylabel("Rewards")
+        plt.title("Rewards Over Time")
         plt.plot([np.mean(reward_hist[tr: tr+window]) for tr in range(window, len(reward_hist))]) #prints data on Graph
+        plt.show()
 
-        print("\nHere is the transition probability table:")
+        print("\Transition probability table:")
         print(prob_table)
 
 
