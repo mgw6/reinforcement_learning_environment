@@ -55,7 +55,8 @@ Assignment 2 Report
 	In the next line this will dictate whether or not we choose a random move or take a move we believe will yield a higher reward. 
 	At first epsilon was first initialized as 1, so it is impossible for the greedy value to be higher than epsilon. 
 	Over time epsilon will decrease which will make it more and more likely to choose the option that yields a higher reward.  
-	I then set the new state, new score, and find the difference between the new and the old score to figure out how much the score changed. 
+	I then set the new state, new score, and find the difference between the new and the old score to figure out how 
+	much the score changed. 
 	
 	Then we update our probability table. 
 	I used the Q-Learning equation on slide 24 of lecture 7.1-7.2. 
