@@ -1,4 +1,4 @@
-# reinforcement_learning_environment
+# Reinforcement Learning Environment
 Reinforcement Learning Environment using Open AI Gym
 
 Assignment for Intro to Artificial Intelligence (CSE 368) at the Univeristy at Buffalo. Written June 2020. 
