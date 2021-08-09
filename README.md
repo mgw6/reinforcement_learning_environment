@@ -14,7 +14,7 @@ CSE 368 - Artificial Intelligence
 
 Assignment 2 Report
 
-	For assignment two, the student was required to set up a deterministic environment, a stochastic environment based on the 
+For assignment two, the student was required to set up a deterministic environment, a stochastic environment based on the 
 deterministic one, and then implement a tabular method to solve both of these environments. The deterministic environment 
 I set up contains 16 states in a 4 by 4 grid, with 4 possible moves in each state. The max number of timesteps is set at 8, 
 because 6 are needed to go directly from one corner to the other. By giving the machine 8 it has room for a couple of missteps. 
@@ -24,7 +24,7 @@ For the deterministic environment, whichever move choice is selected by the mach
 When the agent reaches the goal it gets a +3 reward and the game terminates. 
 The game also terminates when it has reached the max number of timesteps, however without the +3 reward. 
 
-	For the stochastic environment, the board is set up in the same 4 by 4 grid with 4 move choices, and 8 timesteps. 
+For the stochastic environment, the board is set up in the same 4 by 4 grid with 4 move choices, and 8 timesteps. 
 The major difference between the deterministic and stochastic environment is that with the stochastic when a move is 
 selected there is a varying probability that that move will actually occur. 
 The most likely scenario is that the selected move occurs, but there are varying probabilities that others will occur. 
@@ -34,7 +34,7 @@ The other difference is the variation on rewards. The rewards are located in pos
 When the agent lands on either of those squares there is a .33 chance that it will lose a point, a .47% chance that 
 it gains a point and a .3% chance that it gains 2 points. 
 
-	My tabular method was designed as a function because I wanted to be able to write one function to test on both environments, 
+My tabular method was designed as a function because I wanted to be able to write one function to test on both environments, 
 similar to how in assignment one we wrote two search functions to test on one environment. 
 I later found that this was handy because I could make the number of runs an input of the function so that I could change 
 how many runs were used in each environment. 
@@ -49,7 +49,7 @@ which are used in the next while loop: current score, new score, score differenc
 I purposefully have this “reset” be something crazy because they all should be changed later. 
 If they are not reset then they will show up later and I will know to start looking there for errors. 
 
-\tI then go into a while boolean loop for every time the game is played. 
+I then go into a while boolean loop for every time the game is played. 
 I set the current score and state the values they should be. 
 I then have the function generate a random number for greedy. 
 In the next line this will dictate whether or not we choose a random move or take a move we believe will yield a higher reward. 
